@@ -20,38 +20,37 @@ export class Tab1Page {
       switch (this.fullDate) {
         case 0:
           this.diaria = 60;
-          alert('teste');
           break;
         case 1:
           this.diaria = 0;
-          alert('teste');
           break;
         case 2:
           this.diaria = 55;
-          alert('teste');
           break;
         case 3:
           this.diaria = 55;
-          alert('teste');
           break;
         case 4:
           this.diaria = 55;
-          alert('teste');
           break;
         case 5:
           this.diaria = 60;
-          alert('teste');
           break;
         case 6:
           this.diaria = 60;
-          alert('teste');
           break;
 
         default:
           break;
       }
   }
-  ionViewDidLoad(){
+  /**
+   * teste
+   */
+  public teste() {
+    this.diaria = 0;
+  }
+  ngOnInit(){
     this.diariaMotoca();
   }
   constructor() {}
