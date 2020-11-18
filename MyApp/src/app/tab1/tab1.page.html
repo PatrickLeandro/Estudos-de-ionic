@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{date.getDay()}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1>{{date}}</h1>
+  
+  {{day[date.getDay()]}}
+  <h2>
+    {{fullDate}}
+  </h2>
+  <h3>{{diaria}}</h3>
+  
+  
+
+</ion-content>
