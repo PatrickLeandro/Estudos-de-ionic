@@ -12,7 +12,7 @@ export class Tab1Page {
   public date = new Date();
   public fullDate = this.date.getDay();
   public diaria = 0;
-
+  public comanda: string;
   /**
    * diariaMotoca função que altera o valor da diaria conforme o dia.
    */
@@ -45,14 +45,17 @@ export class Tab1Page {
       }
   }
   /**
-   * teste
+   * Função que vai listar as Comandas dentro de uma div para que o usuário possa ver com facilidade.
    */
-  public teste() {
-    this.diaria = 0;
+  public listarComandas() {
+    this.diaria += 1;
+    document.getElementById('listEntregas').innerHTML += `<ion-chip >
+          <ion-label color="tertiary">${this.comanda}</ion-label>
+        </ion-chip>`;
   }
+  // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit(){
     this.diariaMotoca();
   }
   constructor() {}
-
 }
