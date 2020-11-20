@@ -1,42 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
     <ion-title>
       <h1>Motoboy</h1>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content color="light">
 
   <div class="container">
-    <h4>
+    <h4 (click)="mudarDiaria()">
     {{day[date.getDay()]}}
     &nbsp;-&nbsp;
     Diaria: R${{diaria}},00
     </h4><br>
 
     <div class="divComanda left">    <ion-item>
-      <ion-input name="comanda" [(ngModel)]="comanda" type="number" id="comanda"  placeholder="Número da comanda"></ion-input>
+      <ion-input name="comanda" [(ngModel)]="comanda" type="text" id="comanda"  placeholder="Número da comanda ou endereço"></ion-input>
       </ion-item>
-
-      Valor da taxa: 
-      <select name="" id="valorTaxa">
-        <option value="1">01</option>
-        <option value="2" selected>02</option>
-        <option value="3">03</option>
-        <option value="4">04</option>
-        <option value="5">05</option>
-        <option value="6">06</option>
-        <option value="7">07</option>
-        <option value="8">08</option>
-        <option value="9">09</option>
-        <option value="10">10</option>
-      </select>
+      
+       
+      <ion-item>
+        <ion-label>Valor da taxa:</ion-label>
+        <ion-select  name="taxa" [(ngModel)]="taxa" value="2">
+          <ion-select-option value="1">01</ion-select-option>
+          <ion-select-option value="2">02</ion-select-option>
+          <ion-select-option value="3">03</ion-select-option>
+          <ion-select-option value="4">04</ion-select-option>
+          <ion-select-option value="5">05</ion-select-option>
+          <ion-select-option value="6">06</ion-select-option>
+          <ion-select-option value="7">07</ion-select-option>
+          <ion-select-option value="8">08</ion-select-option>
+          <ion-select-option value="9">09</ion-select-option>
+          <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+      </ion-item>
     </div>
+
     <ion-button color="dark" (click)="listarComandas()" class="btn right">Adicionar</ion-button>
-    <div class="listComun" id="listEntregas"></div>
+
+    <div class="listComun" id="listEntregas">
+
+    </div>
     
-    <br>
-    
+
+
+
+    <br><br>
+    <p id="fechamentoEntregas">Nenhuma entrega informada</p>
+    <h3 id="fechamentoTotal">Fechamento: R$00,00</h3>
+
   </div>
+
 </ion-content>
