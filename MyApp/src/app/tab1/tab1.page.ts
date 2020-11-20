@@ -19,7 +19,7 @@ export class Tab1Page {
   public numEntregas = 0;
   public alterarDiaria = 0;
   /**
-   * diariaMotoca função que altera o valor da diaria conforme o dia.
+   * função que altera o valor da diária conforme o dia.
    */
   public diariaMotoca() {
       switch (this.fullDate) {
@@ -49,6 +49,11 @@ export class Tab1Page {
           break;
       }
   }
+  /**
+   * Função que vai ser chamada ao ser quando o usuário clicar no valor da diaria, para mudar o valor da diária
+   * conforme os valores pré definidos 35, 40, 50, 55, e 60.
+   * Pretensão para isso ser alterado para um input em um próximo passo do projeto.
+   */
   public mudarDiaria() {
     this.alterarDiaria++;
     switch (this.alterarDiaria) {
@@ -82,15 +87,21 @@ export class Tab1Page {
 }
   /**
    * Função que vai listar as Comandas dentro de uma div para que o usuário possa ver com facilidade.
+   * Função também vai alterar automaticamente o valor das entregas feitas juntamente ao fechamento.
+   * Pretensão para um botão de fechamento final ao invés de informar o valor a cada entrega adicionada.
+   * O que não é de todo ruim mas a ideia seria aparecer um modal com as informações do fechamento la.
    */
   public listarComandas() {
     this.totalTaxas = this.totalTaxas + Number(this.taxa);
     this.total = Number(this.diaria) + Number(this.totalTaxas);
     this.numEntregas++;
+    /* Esta parte da função é onde adicionar um novo elemento de entrega dentro da div listEntregas */
     document.getElementById('listEntregas').innerHTML += `<ion-chip >
           <ion-label color="tertiary">${this.comanda}</ion-label>
         </ion-chip>`;
+    /*Altera a frase de total de entregas */
     document.getElementById('fechamentoEntregas').innerHTML = `Total de entregas feitas: ${this.numEntregas} - Valor R$${this.totalTaxas},00`;
+    /*Altera o fechamento */
     document.getElementById('fechamentoTotal').innerHTML = `Fechamento R$${this.total},00`;
   }
   // tslint:disable-next-line: use-lifecycle-interface
