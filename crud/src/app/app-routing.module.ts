@@ -8,18 +8,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'contacts',
     pathMatch: 'full'
   },
-  {
-    path: 'contact-form',
-    loadChildren: () => import('./contacts/contact-form/contact-form.module').then( m => m.ContactFormPageModule)
-  },
-  {
-    path: 'contact-list',
-    loadChildren: () => import('./contacts/contact-list/contact-list.module').then( m => m.ContactListPageModule)
-  },
-];
+  { path: 'contacts', loadChildren: './contacts/contact-list/contact-list.module#ContactListPageModule'},
+  { path: 'contacts/new', loadChildren: './contacts/contact-form/contact-form.module#ContactFormPageModule'},
+  { path: 'contacts/edit/:id', loadChildren: './contacts/contact-form/contact-form.module#ContactFormPageModule'},
+  ];
 
 @NgModule({
   imports: [

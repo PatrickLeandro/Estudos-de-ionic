@@ -27,7 +27,7 @@ export class DatabaseService {
   }
   getCreateTable() {
     const sqls = [];
-    sqls.push('CREATE TABLE IF NOT EXISTS contacts (id integer primary key AUTO_INCREMENT, name varchar(100));');
+    sqls.push('CREATE TABLE IF NOT EXISTS contacts (id integer primary key AUTOINCREMENT, name varchar(100));');
     return sqls.join('\n');
   }
   executeSQL(sql: string, params?: any[]) {
