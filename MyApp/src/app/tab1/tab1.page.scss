@@ -9,7 +9,6 @@
     overflow: hidden;
     padding: 4px;
     margin: auto;
-    background-color: white;
 }
 #comanda{
     border: none;
@@ -27,4 +26,36 @@
 }
 .divComanda{
     width: 100%;
+}
+.legendas{
+    height: 22px;
+    display: flex;   
+    width: 33%; 
+}
+.legenda{
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+    margin-top: 20px;
+}
+.gray{
+    background-color: gray;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.black{
+    background-color: black;
+}
+.yellow{
+    background-color: yellow; 
+}
+.green{
+    background-color: green;
+}
+h3{
+    height: 10px;
 }

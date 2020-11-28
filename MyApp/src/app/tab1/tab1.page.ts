@@ -96,9 +96,46 @@ export class Tab1Page {
     this.total = Number(this.diaria) + Number(this.totalTaxas);
     this.numEntregas++;
     /* Esta parte da função é onde adicionar um novo elemento de entrega dentro da div listEntregas */
-    document.getElementById('listEntregas').innerHTML += `<ion-chip >
-          <ion-label color="tertiary">${this.comanda}</ion-label>
+    switch(Number(this.taxa)){
+      case 1:
+        document.getElementById('listEntregas').innerHTML += `<ion-chip >
+        <ion-label color="medium">${this.comanda} </ion-label>
         </ion-chip>`;
+        break;
+      case 2:
+        document.getElementById('listEntregas').innerHTML += `<ion-chip >
+        <ion-label color="dark">${this.comanda}</ion-label>
+        </ion-chip>`;
+        break;
+      case 3:
+        document.getElementById('listEntregas').innerHTML += `<ion-chip >
+        <ion-label color="tertiary">${this.comanda}</ion-label>
+        </ion-chip>`;
+        break;
+      case 4:
+        document.getElementById('listEntregas').innerHTML += `<ion-chip >
+        <ion-label color="success">${this.comanda}</ion-label>
+        </ion-chip>`;
+        break;
+      case 5:
+        document.getElementById('listEntregas').innerHTML += `<ion-chip >
+        <ion-label color="warning">${this.comanda}</ion-label>
+        </ion-chip>`;
+      break;
+      default:
+          document.getElementById('listEntregas').innerHTML += `<ion-chip >
+          <ion-label color="danger">${this.comanda}</ion-label>
+          </ion-chip>`
+      break;
+    }
+    
+    
+  
+  
+  
+    
+    
+
     /*Altera a frase de total de entregas */
     document.getElementById('fechamentoEntregas').innerHTML = `Total de entregas feitas: ${this.numEntregas} - Valor R$${this.totalTaxas},00`;
     /*Altera o fechamento */
